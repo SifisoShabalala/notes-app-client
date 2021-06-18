@@ -13,21 +13,27 @@ import NotFound from "./containers/NotFound";
 export default function Routes() {
     return (
         <Switch>
-            <UnauthenticatedRoute exact path="/login">
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route exact path="/login">
                 <Login />
-            </UnauthenticatedRoute>
-            <UnauthenticatedRoute exact path="/signup">
+            </Route>
+            <Route exact path="/signup">
                 <Signup />
-            </UnauthenticatedRoute>
-            <AuthenticatedRoute exact path="/settings">
+            </Route>
+            <Route exact path="/settings">
                 <Settings />
-            </AuthenticatedRoute>
-            <AuthenticatedRoute exact path="/notes/new">
+            </Route>
+            <Route exact path="/notes/new">
                 <NewNote />
-            </AuthenticatedRoute>
-            <AuthenticatedRoute exact path="/notes/:id">
+            </Route>
+            <Route exact path="/notes/:id">
                 <Notes />
-            </AuthenticatedRoute>
+            </Route>
+            <Route>
+                <NotFound />
+            </Route>
         </Switch>
     );
 }
