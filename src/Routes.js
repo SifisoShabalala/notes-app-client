@@ -13,9 +13,9 @@ import NotFound from "./containers/NotFound";
 export default function Routes() {
     return (
         <Switch>
-            <Route exact path="/">
+            <AuthenticatedRoute exact path="/">
                 <Home />
-            </Route>
+            </AuthenticatedRoute>
             <UnauthenticatedRoute exact path="/login">
                 <Login />
             </UnauthenticatedRoute>
