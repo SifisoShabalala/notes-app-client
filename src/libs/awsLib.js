@@ -16,4 +16,6 @@ export async function s3Delete(file) {
     const deleted = await Storage.vault.remove(fileName, {
         contentType: file.type
     });
+
+    return deleted;
 }
